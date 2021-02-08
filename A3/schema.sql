@@ -98,11 +98,6 @@ load data local infile 'data_teams' into table Teams
     fields terminated by ','
     lines terminated by '\n';
 
-
-load data local infile 'data_coach' into table Coaches
-    fields terminated by ','
-    lines terminated by '\n';
-
 load data local infile 'data_player' into table Players
     fields terminated by ','
     lines terminated by '\n';
@@ -134,17 +129,5 @@ load data local infile 'data_teamInSeries' into table TeamCompetesInSeries
 load data local infile 'data_favChamps' into table TopThree
     fields terminated by ','
     lines terminated by '\n';
-
-
-Select C.* from Coaches C where C.teamID < 5;
-Select G.* from Games G where G.gameID < 5;
-Select PG.* from PlayerCompetesInGame PG where PG.gameID < 2;
-Select PS.* from PlayerCompetesInSeries PS where PS.seriesID < 2;
-Select P.* from Players P where P.playerID < 5;
-Select S.* from Series S where S.seriesID < 5;
-Select TG.* from TeamCompetesInGame TG where TG.gameID < 5;
-Select TS.* from TeamCompetesInSeries TS where TS.seriesID < 5;
-Select T.* from Teams T where T.teamID < 5;
-Select TT.* from TopThree TT where TT.playerID < 5;
 
 
