@@ -55,7 +55,8 @@ create table Games (
   lengthGame time,
   seriesID int,
   Primary Key (gameID, seriesID),
-  Foreign Key (seriesID) references Series(seriesID)
+  Foreign Key (seriesID) references Series(seriesID),
+  index(lengthGame)
 );
 
 create table TeamCompetesInSeries(
@@ -91,7 +92,8 @@ create table PlayerCompetesInGame(
   won varchar(4),
   Primary Key (playerID, gameID),
   Foreign Key (playerID) references Players(playerID),
-  Foreign Key (gameID) references Games(gameID)
+  Foreign Key (gameID) references Games(gameID),
+  index(won)
 );
 
 load data local infile 'data_teams' into table Teams
@@ -136,15 +138,5 @@ load data local infile 'data_favChamps' into table TopThree
     lines terminated by '\n';
 
 
-Select C.* from Coaches C where C.teamID < 5;
-Select G.* from Games G where G.gameID < 5;
-Select PG.* from PlayerCompetesInGame PG where PG.gameID < 2;
-Select PS.* from PlayerCompetesInSeries PS where PS.seriesID < 2;
-Select P.* from Players P where P.playerID < 5;
-Select S.* from Series S where S.seriesID < 5;
-Select TG.* from TeamCompetesInGame TG where TG.gameID < 5;
-Select TS.* from TeamCompetesInSeries TS where TS.seriesID < 5;
-Select T.* from Teams T where T.teamID < 5;
-Select TT.* from TopThree TT where TT.playerID < 5;
 
 

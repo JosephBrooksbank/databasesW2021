@@ -69,21 +69,20 @@ select 'Q5' as ' ' ;
 SELECT E.eid from Employee E
 join WorksFor WF on E.eid = WF.eid
 group by E.eid
-having count(*) >= 3;
+having count(*) = 3;
 
 # +-----+
 # | eid |
 # +-----+
 # |  94 |
 # | 123 |
-# | 146 |
 # | 262 |
 # | 293 |
 # | 684 |
 # | 922 |
 # | 971 |
 # +-----+
-# 8 rows in set (0.00 sec)
+# 7 rows in set (0.00 sec)
 
 select 'Q6' as ' ' ;
 -- (6) Find the eid, residenceState, and did for all those 20 year old

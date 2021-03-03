@@ -17,7 +17,7 @@ teams.append("Team Liquid")
 teams.append("Counter Logic Gaming")
 
 # generating more teams for more data
-for i in range(1, 1000):
+for i in range(1, 10000):
     original_team = teams[np.random.randint(10) + 1]
     teams.append(original_team + str(i))
 
@@ -68,7 +68,7 @@ def generateGame(numGames, seriesID, team1, team2, won):
         games.append(Game(len(games) + 1, length, seriesID, team1, team2, won))
 
 
-numSeries = 2001
+numSeries = 200001
 series = []
 for i in range(1, numSeries):
     team1 = teams[np.random.randint(len(teams))]
